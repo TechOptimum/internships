@@ -7,19 +7,19 @@ module.exports = {
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Build websites with Notion',
-  domain: 'jotzilla.vercel.app',
+  name: 'Internship Opportunities by Tech Optimum',
+  domain: 'internships.techoptimum.org',
   author: 'Verfasor',
 
   // open graph metadata (optional)
-  description: 'Learn how to build websites with Notion. This website is an example starter site powered by Notion. Built on top of NotionX.',
-  socialImageTitle: 'Build websites with Notion',
-  socialImageSubtitle: 'Learn how to build websites with Notion. This website is an example starter site powered by Notion. Built on top of NotionX.',
+  description: 'Internship Opportunities by Tech Optimum',
+  socialImageTitle: 'Internships',
+  socialImageSubtitle: 'Find internships at companies as a high schooler!',
 
   // social usernames (optional)
-  twitter: 'verfasor',
-  github: 'verfasor',
-  linkedin: 'mighil',
+  twitter: '',
+  github: '',
+  linkedin: '',
 
   // default notion icon and cover images for site-wide consistency (optional)
   // page-specific values will override these site-wide defaults
