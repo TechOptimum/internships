@@ -35,12 +35,12 @@
 
 
 .notion-collection-card-body {
-  margin-bottom: -20px;
+  margin-bottom: 20px;
   padding: 3px 3px;
 }
 
 .notion-collection-card-property .notion-property.notion-property-date {
-  display: none;
+ 
 }
 
 .index-page .notion-title {
@@ -52,14 +52,14 @@
 }
 
 .notion-header .breadcrumb.active {
-  text-transform: lowercase;
+  
 }
 .notion-header .searchIcon {
-  text-transform: lowercase;
+
 }
 
 .notion-property {
-  text-transform: lowercase;
+
 }
 
 .notion-property.notion-property-date::before {
@@ -132,7 +132,7 @@
   font-size: 1.5em;
   font-weight: 600;
   white-space: unset;
-  text-transform: lowercase;
+
 }
 
 .notion-collection-header-title {
@@ -210,7 +210,7 @@
 }
 
 .notion-hr {
-  margin: 2em 0;
+  margin: .5em 0;
 }
 
 @media only screen and (max-width: 920px) {
