@@ -1,19 +1,19 @@
-import React from 'react'
-import Head from 'next/head'
-import { PageHead } from './PageHead'
+import React from "react";
+import Head from "next/head";
+import { PageHead } from "./PageHead";
 
-import styles from './styles.module.css'
+import styles from "./styles.module.css";
 
 export const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => {
-  const title = 'Error'
+  const title = "Error";
 
   return (
     <>
       <PageHead />
 
       <Head>
-        <meta property='og:site_name' content={title} />
-        <meta property='og:title' content={title} />
+        <meta property="og:site_name" content={title} />
+        <meta property="og:title" content={title} />
 
         <title>{title}</title>
       </Head>
@@ -24,9 +24,9 @@ export const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => {
 
           {statusCode && <p>Error code: {statusCode}</p>}
 
-          <img src='/error.png' alt='Error' className={styles.errorImage} />
+          <img src="/error.png" alt="Error" className={styles.errorImage} />
         </main>
       </div>
     </>
-  )
-}
+  );
+};
