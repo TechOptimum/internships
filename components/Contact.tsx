@@ -1,5 +1,4 @@
-import styles from "./styles.module.css";
-import * as config from "lib/config";
+import React from "react";
 // TODO: merge the data and icons from PageSocial with the social links in Footer
 
 export const Contact: React.FC = () => {

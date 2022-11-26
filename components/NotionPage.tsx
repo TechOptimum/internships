@@ -9,7 +9,7 @@ import BodyClassName from "react-body-classname";
 import useDarkMode from "use-dark-mode";
 import { PageBlock } from "notion-types";
 
-import { Tweet, TwitterContextProvider } from "react-static-tweets";
+import { Tweet } from "react-static-tweets";
 
 // core notion renderer
 import {
