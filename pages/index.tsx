@@ -12,7 +12,7 @@ import {
 
 const NOTION_ID = process.env.NOTION_ID || "0f5efab227854df6a76079e7e73b9dd2";
 
-export type Post = { id: string; slug: string; title: string; date: string };
+export type Post = { id: string; slug: string; title: string; date: string; category: string };
 
 export const getAllPosts = async (): Promise<Post[]> => {
   return await fetch(
@@ -80,7 +80,7 @@ function HomePage({ posts }: { posts: Post[] }) {
                 <Heading color="brand.800" fontSize="2xl">
                   {post.title}
                 </Heading>
-                <Badge colorScheme="teal">{post.Category}</Badge>
+                <Badge colorScheme="teal">{post.category}</Badge>
                 <Text color="brand.900">posted on {post.date}</Text>
               </Box>
             </Link>
