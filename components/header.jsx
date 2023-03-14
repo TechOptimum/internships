@@ -67,7 +67,7 @@ export default function Header() {
       <Flex
         zIndex="100 !important"
         justifyContent="space-between"
-        padding="15px 115px"
+        padding="15px 0"
         position={"relative"}
         direction={["column", "row"]}
         alignItems="center"

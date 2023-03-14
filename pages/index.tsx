@@ -7,9 +7,11 @@ import {
   Box,
   Badge,
   Input,
+  Wrap,
   Stack,
 } from "@chakra-ui/react";
 import Header from "../components/header";
+import Mission from "../components/mission";
 const NOTION_ID = process.env.NOTION_ID || "0f5efab227854df6a76079e7e73b9dd2";
 
 export type Post = {
@@ -56,57 +58,59 @@ function HomePage({ posts }: { posts: Post[] }) {
 
   return (
     <>
-      <Header />
-      <Box
-        maxW="900px"
-        alignItems="center"
-        justifyContent="center"
-        margin="auto"
-      >
-        <Input
-          maxW="300px"
-          margin="auto
-      "
-          textAlign="center"
-          placeholder="Search by title"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <Box
-          mt="1.5rem"
-          borderRadius="10px"
-          padding="1rem 2rem"
-          maxW="400px"
-          backgroundColor="brand.700 !important"
-        >
-          <Stack spacing={4}>
+      <Box margin="auto" maxW="1100px">
+        <Header />
+        <Mission />
+        <Box alignItems="center" justifyContent="center" margin="auto">
+          <Heading>
+            <Text fontSize="4xl" color="brand.900">
+            Search by Keyword or Organization for internships
+            </Text>
+          </Heading>
+          <Input
+            maxW="300px"
+            margin="auto"
+            textAlign="center"
+            placeholder="Search by title"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <Wrap mt="5rem" spacing={4}>
             {filteredPosts.map((post) => (
-              <Link
-                href="/internships/[slug]"
-                as={`/internships/${post.slug}`}
-                key={post.slug}
+              <Box
+                mt="1.5rem"
+                borderRadius="10px"
+                padding="1rem 2rem"
+                maxW="400px"
+                backgroundColor="brand.700 !important"
               >
-                <Box>
-                  <Heading color="brand.800" fontSize="2xl">
-                    {post.title}
-                  </Heading>
-                  <Badge colorScheme="teal">{post.category}</Badge>
-                  <Text color="brand.900">posted on {post.date}</Text>
-                </Box>
-              </Link>
+                <Link
+                  href="/internships/[slug]"
+                  as={`/internships/${post.slug}`}
+                  key={post.slug}
+                >
+                  <Box>
+                    <Heading color="brand.800" fontSize="2xl">
+                      {post.title}
+                    </Heading>
+                    <Badge colorScheme="teal">{post.category}</Badge>
+                    <Text color="brand.900">posted on {post.date}</Text>
+                  </Box>
+                </Link>
+              </Box>
             ))}
-          </Stack>
+          </Wrap>
+          {loading && (
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              height="100vh"
+            >
+              <Spinner color="brand.900" />
+            </Box>
+          )}
         </Box>
-        {loading && (
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            height="100vh"
-          >
-            <Spinner color="brand.900" />
-          </Box>
-        )}
       </Box>
     </>
   );
