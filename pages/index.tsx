@@ -9,10 +9,16 @@ import {
   Input,
   Stack,
 } from "@chakra-ui/react";
-
+import Header from "../components/header";
 const NOTION_ID = process.env.NOTION_ID || "0f5efab227854df6a76079e7e73b9dd2";
 
-export type Post = { id: string; slug: string; title: string; date: string; category: string };
+export type Post = {
+  id: string;
+  slug: string;
+  title: string;
+  date: string;
+  category: string;
+};
 
 export const getAllPosts = async (): Promise<Post[]> => {
   return await fetch(
@@ -49,55 +55,60 @@ function HomePage({ posts }: { posts: Post[] }) {
   }, [searchTerm, posts]);
 
   return (
-    <Box maxW="900px" alignItems="center" justifyContent="center" margin="auto">
-      <Heading my="1rem" textAlign={"center"} fontSize="5xl" color="brand.900">
-        Tech Optimum Internship Finder
-      </Heading>
-      <Input
-      maxW="300px"
-        margin="auto
-      "
-        textAlign="center"
-        placeholder="Search by title"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+    <>
+      <Header />
       <Box
-      mt="1.5rem"
-        borderRadius="10px"
-        padding="1rem 2rem"
-        maxW="400px"
-        backgroundColor="brand.700 !important"
+        maxW="900px"
+        alignItems="center"
+        justifyContent="center"
+        margin="auto"
       >
-        <Stack spacing={4}>
-          {filteredPosts.map((post) => (
-            <Link
-              href="/internships/[slug]"
-              as={`/internships/${post.slug}`}
-              key={post.slug}
-            >
-              <Box>
-                <Heading color="brand.800" fontSize="2xl">
-                  {post.title}
-                </Heading>
-                <Badge colorScheme="teal">{post.category}</Badge>
-                <Text color="brand.900">posted on {post.date}</Text>
-              </Box>
-            </Link>
-          ))}
-        </Stack>
-      </Box>
-      {loading && (
+        <Input
+          maxW="300px"
+          margin="auto
+      "
+          textAlign="center"
+          placeholder="Search by title"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
         <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          height="100vh"
+          mt="1.5rem"
+          borderRadius="10px"
+          padding="1rem 2rem"
+          maxW="400px"
+          backgroundColor="brand.700 !important"
         >
-          <Spinner color="brand.900" />
+          <Stack spacing={4}>
+            {filteredPosts.map((post) => (
+              <Link
+                href="/internships/[slug]"
+                as={`/internships/${post.slug}`}
+                key={post.slug}
+              >
+                <Box>
+                  <Heading color="brand.800" fontSize="2xl">
+                    {post.title}
+                  </Heading>
+                  <Badge colorScheme="teal">{post.category}</Badge>
+                  <Text color="brand.900">posted on {post.date}</Text>
+                </Box>
+              </Link>
+            ))}
+          </Stack>
         </Box>
-      )}
-    </Box>
+        {loading && (
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            height="100vh"
+          >
+            <Spinner color="brand.900" />
+          </Box>
+        )}
+      </Box>
+    </>
   );
 }
 
