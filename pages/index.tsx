@@ -61,17 +61,20 @@ function HomePage({ posts }: { posts: Post[] }) {
       <Box margin="auto" maxW="1100px">
         <Header />
         <Mission />
-        <Box alignItems="center" justifyContent="center" margin="auto">
-          <Heading>
-            <Text fontSize="4xl" color="brand.900">
-            Search by Keyword or Organization for internships
-            </Text>
+        <Box
+          textAlign={"center"}
+          alignItems="center"
+          justifyContent="center"
+          margin="auto"
+        >
+          <Heading color="brand.900">
+            Search by Keyword or Organization for Internships
           </Heading>
           <Input
-            maxW="300px"
             margin="auto"
             textAlign="center"
-            placeholder="Search by title"
+            placeholder="Type in an organization or keyword to search for internships here.
+            "
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />

@@ -3,7 +3,6 @@ import { AppProps } from "next/app";
 import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 
-
 import "../styles.css";
 
 import { ChakraProvider } from "@chakra-ui/react";
@@ -15,16 +14,15 @@ const colors = {
     900: "#94a3b8", // main text color
     800: "#fff", //titles / white color
     700: "#172032", // secondary bg
-    600: "#0f172a" //dark background color
+    600: "#0f172a", //dark background color
   },
 };
 
 const theme = extendTheme({
   components: {
-   
     Heading: {
       baseStyle: {
-        fontWeight: "600", 
+        fontWeight: "600",
       },
       sizes: {
         lg: {
@@ -41,9 +39,7 @@ const theme = extendTheme({
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      
-        <Component {...pageProps} />
- 
+      <Component {...pageProps} />
     </ChakraProvider>
   );
 }

@@ -103,7 +103,6 @@ export default function Header() {
                 _hover={{
                   cursor: "pointer",
                 }}
-               
                 textAlign={"center"}
                 alignItems="left"
                 href="https://techoptimum.org"
@@ -117,7 +116,6 @@ export default function Header() {
           </Flex>
         </motion.div>
         <motion.div
-
           variants={{
             ...buttonVariants,
             visible: {
@@ -132,7 +130,6 @@ export default function Header() {
           animate="visible"
         >
           <Flex
-
             justifyContent="space-between"
             alignItems="center"
             display={{ base: "none", md: "flex" }}
@@ -142,18 +139,14 @@ export default function Header() {
               _hover={{
                 textDecoration: "none",
               }}
-              
-
-
               mr="20px"
             >
-              <Text color="white !important"
-              fontSize="lg">Return to the Main Website</Text>
-             
+              <Text color="white !important" fontSize="lg">
+                Return to the Main Website
+              </Text>
             </Link>
-           </Flex>
+          </Flex>
         </motion.div>
-
       </Flex>
     </>
   );
